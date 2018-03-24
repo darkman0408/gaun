@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad863f9a50c5773a595bdf4f73d9981b",
+    "content-hash": "75ed30ca823781a0699ccd059f7bd416",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -345,6 +345,65 @@
             "time": "2018-02-23T01:58:20+00:00"
         },
         {
+            "name": "fxp/composer-asset-plugin",
+            "version": "v1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fxpio/composer-asset-plugin.git",
+                "reference": "61352d99940d2b2392a5d2db83b8c0ef5faf222a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fxpio/composer-asset-plugin/zipball/61352d99940d2b2392a5d2db83b8c0ef5faf222a",
+                "reference": "61352d99940d2b2392a5d2db83b8c0ef5faf222a",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "composer/composer": "^1.4.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Fxp\\Composer\\AssetPlugin\\FxpAssetPlugin",
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fxp\\Composer\\AssetPlugin\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Pluchino",
+                    "email": "francois.pluchino@gmail.com"
+                }
+            ],
+            "description": "NPM/Bower Dependency Manager for Composer",
+            "homepage": "https://github.com/fxpio/composer-asset-plugin",
+            "keywords": [
+                "asset",
+                "bower",
+                "composer",
+                "dependency manager",
+                "nodejs",
+                "npm",
+                "package"
+            ],
+            "time": "2017-10-20T06:53:56+00:00"
+        },
+        {
             "name": "madand/yii2-knockoutjs",
             "version": "3.3",
             "source": {
@@ -452,16 +511,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.15",
+            "version": "2.0.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "e8e5bc894e19cf1e37084106a122da7062d7b179"
+                "reference": "ed3a9e1c4abe206e1c3ce48a6b3624119b79850d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/e8e5bc894e19cf1e37084106a122da7062d7b179",
-                "reference": "e8e5bc894e19cf1e37084106a122da7062d7b179",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ed3a9e1c4abe206e1c3ce48a6b3624119b79850d",
+                "reference": "ed3a9e1c4abe206e1c3ce48a6b3624119b79850d",
                 "shasum": ""
             },
             "require": {
@@ -548,7 +607,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2018-03-20T12:41:23+00:00"
+            "time": "2018-03-21T18:36:53+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -612,16 +671,16 @@
         },
         {
             "name": "yiisoft/yii2-composer",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-composer.git",
-                "reference": "3f4923c2bde6caf3f5b88cc22fdd5770f52f8df2"
+                "reference": "163419f1f197e02f015713b0d4f85598d8f8aa80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/3f4923c2bde6caf3f5b88cc22fdd5770f52f8df2",
-                "reference": "3f4923c2bde6caf3f5b88cc22fdd5770f52f8df2",
+                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/163419f1f197e02f015713b0d4f85598d8f8aa80",
+                "reference": "163419f1f197e02f015713b0d4f85598d8f8aa80",
                 "shasum": ""
             },
             "require": {
@@ -650,6 +709,10 @@
                 {
                     "name": "Qiang Xue",
                     "email": "qiang.xue@gmail.com"
+                },
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc"
                 }
             ],
             "description": "The composer plugin for Yii extension installer",
@@ -658,7 +721,7 @@
                 "extension installer",
                 "yii2"
             ],
-            "time": "2016-12-20T13:26:02+00:00"
+            "time": "2018-03-21T16:15:55+00:00"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
