@@ -10,11 +10,24 @@ use yii\widgets\ActiveForm;
 
 <div class="member-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+        'id' => 'member-update-form',
+        'options' => ['class' => 'form-horizontal'],
+    ]); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <fieldset>
+        <legend>Member</legend>
+        <?= $form->field($member, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'lastName')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($member, 'lastName')->textInput(['maxlength' => true]) ?>
+    </fieldset>
+
+    <fieldset>
+        <legend>Member Contact</legend>
+        <?= $form->field($contact, 'phone')->textInput(['maxlength' => true]) ?>
+
+        <?= $form->field($contact, 'email')->textInput(['maxlength' => true]) ?>
+    </fieldset>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

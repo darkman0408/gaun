@@ -34,6 +34,9 @@ class MemberContact extends \yii\db\ActiveRecord
             [['phone'], 'string', 'max' => 15],
             [['email'], 'string', 'max' => 50],
             [['memberId'], 'exist', 'skipOnError' => true, 'targetClass' => Member::className(), 'targetAttribute' => ['memberId' => 'id']],
+
+            [['phone', 'email'], 'required', 'on' => 'update'],
+            [['phone', 'email'], 'required', 'on' => 'create']
         ];
     }
 
