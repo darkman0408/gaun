@@ -66,9 +66,12 @@ class ServicesController extends Controller
     {
         $model = new Services();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
+        $data = Yii::$app->request->post('Services'); 
+        
+            $model->name = $data['name'];
+            $model->description = $data['description'];
+            $model->save();
+          
 
         return $this->render('create', [
             'model' => $model,
