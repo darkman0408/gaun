@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\MemberSearch */
@@ -25,14 +26,32 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'name',
             'lastName',
 
             [
                 'attribute' => 'phone',
                 'value' => function($model, $key, $index, $column) {
-                    return $model->memberContacts->memberId;
+                    $phones = $model->memberContacts;
+                    if(empty($phones))
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        return implode(', ', ArrayHelper::getColumn($phones, 'phone'));
+                    }
+                },
+            ],
+            [
+                'attribute' => 'email',
+                'value' => function($model, $key, $index, $column) {
+                    $emails = $model->memberContacts;
+                    if(empty($emails))
+                        return null;
+                    else
+                        return implode(', ', ArrayHelper::getColumn($emails, 'email'));
                 },
             ],
 
