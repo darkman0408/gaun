@@ -31,6 +31,9 @@ class Member extends \yii\db\ActiveRecord
         return [
             [['name'], 'string', 'max' => 20],
             [['lastName'], 'string', 'max' => 40],
+
+            [['name', 'lastName'], 'required', 'on' => 'update'],
+            [['name', 'lastName'], 'required', 'on' => 'create']
         ];
     }
 

@@ -5,23 +5,21 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Member;
 use common\models\MemberContact;
 
 /**
- * MemberSearch represents the model behind the search form of `common\models\Member`.
+ * MemberContactSearch represents the model behind the search form of `common\models\MemberContact`.
  */
-class MemberSearch extends Member
+class MemberContactSearch extends MemberContact
 {
-
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['name', 'lastName'], 'safe'],
+            [['id', 'memberId'], 'integer'],
+            [['phone', 'email'], 'safe'],
         ];
     }
 
@@ -43,13 +41,12 @@ class MemberSearch extends Member
      */
     public function search($params)
     {
-        $query = Member::find();
+        $query = MemberContact::find();
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort' => ['attributes' => ['name', 'lastName']]
         ]);
 
         $this->load($params);
@@ -63,10 +60,11 @@ class MemberSearch extends Member
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'memberId' => $this->memberId,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'lastName', $this->lastName]);
+        $query->andFilterWhere(['like', 'phone', $this->phone])
+            ->andFilterWhere(['like', 'email', $this->email]);
 
         return $dataProvider;
     }
