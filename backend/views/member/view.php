@@ -30,37 +30,29 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?php
-        $dataProvider = new ActiveDataProvider([
-            'query' => Member::find()->joinWith('memberContacts')
-                ->where(['memberContact.memberId' => $model->id]),
-        ]);
-    ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'columns' => [
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
             'id',
             'name',
             'lastName',
 
             [
                 'attribute' => 'phone',
-                'value' => function($model, $key, $index, $column) {
+                'format' => 'text',
+                'value' => function($model) {
                     $phones = $model->memberContacts;
                     if(empty($phones))
-                    {
                         return null;
-                    }
                     else
-                    {
                         return implode(', ', ArrayHelper::getColumn($phones, 'phone'));
-                    }
                 },
             ],
+
             [
                 'attribute' => 'email',
-                'value' => function($model, $key, $index, $column) {
+                'format' => 'text',
+                'value' => function($model) {
                     $emails = $model->memberContacts;
                     if(empty($emails))
                         return null;
@@ -69,5 +61,5 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
         ],
-    ]); ?>
+    ]) ?>
 </div>

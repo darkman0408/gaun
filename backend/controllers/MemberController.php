@@ -143,8 +143,9 @@ class MemberController extends Controller
             $isValid = $contact->validate() && $isValid;
             if($isValid)
             {
-                $member->save(false);
-                $contact->save(false);
+                $member->save();
+                $contact->memberId = $member->id;
+                $contact->save();
                 return $this->redirect(['member/view', 'id' => $id]);
             }
         }
