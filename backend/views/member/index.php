@@ -30,8 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'lastName',
 
             [
-                'label' => 'Phone',
-                'value' => 'memberContacts.phone',
+                'attribute' => 'phone',
+                'value' => function($model, $key, $index, $column) {
+                    return $model->memberContacts->memberId;
+                },
             ],
 
             ['class' => 'yii\grid\ActionColumn'],
