@@ -3,17 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Member;
-use common\models\MemberSearch;
+use common\models\MemberContact;
+use common\models\MemberContactSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use common\models\MemberContact;
 
 /**
- * MemberController implements the CRUD actions for Member model.
+ * MemberContactController implements the CRUD actions for MemberContact model.
  */
-class MemberController extends Controller
+class MemberContactController extends Controller
 {
     /**
      * @inheritdoc
@@ -31,12 +30,12 @@ class MemberController extends Controller
     }
 
     /**
-     * Lists all Member models.
+     * Lists all MemberContact models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new MemberSearch();
+        $searchModel = new MemberContactSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -46,7 +45,7 @@ class MemberController extends Controller
     }
 
     /**
-     * Displays a single Member model.
+     * Displays a single MemberContact model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -59,13 +58,13 @@ class MemberController extends Controller
     }
 
     /**
-     * Creates a new Member model.
+     * Creates a new MemberContact model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        /* $model = new Member();
+        $model = new MemberContact();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -73,45 +72,11 @@ class MemberController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-        ]); */
-
-        $member = new Member();
-
-        if(!$member)
-        {
-            throw new NotFoundHttpException("The member was not found.");
-        }
-
-        $contact = new MemberContact();
-
-        if(!$contact)
-        {
-            throw new NotFoundHttpException("The member has no contac info.");
-        }
-
-        $member->scenario = 'create';
-        $contact->scenario = 'create';
-
-        if ($member->load(Yii::$app->request->post()) && $contact->load(Yii::$app->request->post())) 
-        {
-            $isValid = $member->validate();
-            $isValid = $contact->validate() && $isValid;
-            if($isValid)
-            {
-                $member->save(false);
-                $contact->save(false);
-                return $this->redirect(['member/create']);
-            }
-        }
-
-        return $this->render('create', [
-            'member' => $member,
-            'contact' => $contact
         ]);
     }
 
     /**
-     * Updates an existing Member model.
+     * Updates an existing MemberContact model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -119,43 +84,19 @@ class MemberController extends Controller
      */
     public function actionUpdate($id)
     {
-        $member = Member::findOne($id);
+        $model = $this->findModel($id);
 
-        if(!$member)
-        {
-            throw new NotFoundHttpException("The member was not found.");
-        }
-
-        $contact = MemberContact::findOne($member->id);
-
-        if(!$contact)
-        {
-            throw new NotFoundHttpException("The member has no contac info.");
-        }
-
-        $member->scenario = 'update';
-        $contact->scenario = 'update';
-
-        if ($member->load(Yii::$app->request->post()) && $contact->load(Yii::$app->request->post())) 
-        {
-            $isValid = $member->validate();
-            $isValid = $contact->validate() && $isValid;
-            if($isValid)
-            {
-                $member->save(false);
-                $contact->save(false);
-                return $this->redirect(['member/view', 'id' => $id]);
-            }
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
-            'member' => $member,
-            'contact' => $contact
+            'model' => $model,
         ]);
     }
 
     /**
-     * Deletes an existing Member model.
+     * Deletes an existing MemberContact model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -169,15 +110,15 @@ class MemberController extends Controller
     }
 
     /**
-     * Finds the Member model based on its primary key value.
+     * Finds the MemberContact model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Member the loaded model
+     * @return MemberContact the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Member::findOne($id)) !== null) {
+        if (($model = MemberContact::findOne($id)) !== null) {
             return $model;
         }
 
