@@ -75,7 +75,7 @@ class MemberController extends Controller
             'model' => $model,
         ]); */
 
-        $member = new Member();
+         $member = new Member();
 
         if(!$member)
         {
@@ -86,7 +86,7 @@ class MemberController extends Controller
 
         if(!$contact)
         {
-            throw new NotFoundHttpException("The member has no contac info.");
+            throw new NotFoundHttpException("The member has no contact info.");
         }
 
         $member->scenario = 'create';
@@ -98,10 +98,11 @@ class MemberController extends Controller
             $isValid = $contact->validate() && $isValid;
             if($isValid)
             {
-                $member->save(false);
-                $contact->save(false);
+                $member->save();
+                $contact->memberId = $member->id;
+                $contact->save();
                 return $this->redirect(['member/create']);
-            }
+            } 
         }
 
         return $this->render('create', [
@@ -130,7 +131,7 @@ class MemberController extends Controller
 
         if(!$contact)
         {
-            throw new NotFoundHttpException("The member has no contac info.");
+            throw new NotFoundHttpException("The member has no contact info.");
         }
 
         $member->scenario = 'update';
@@ -163,7 +164,20 @@ class MemberController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        //$this->findModel($id)->delete();
+
+        $member = Member::findOne($id);
+        $contact = MemberContact::findOne($member->id);
+
+        if(!$member || !$contact)
+        {
+            throw new NotFoundHttpException("The member was not found.");
+        }
+        else
+        {
+            $member->delete();
+            $contact->delete();
+        }
 
         return $this->redirect(['index']);
     }

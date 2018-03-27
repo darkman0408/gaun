@@ -13,6 +13,8 @@ use common\models\MemberContact;
  */
 class MemberSearch extends Member
 {
+    public $phone;
+    public $email;
 
     /**
      * @inheritdoc
@@ -21,7 +23,7 @@ class MemberSearch extends Member
     {
         return [
             [['id'], 'integer'],
-            [['name', 'lastName'], 'safe'],
+            [['name', 'lastName', 'phone', 'email'], 'safe'],
         ];
     }
 
@@ -43,13 +45,13 @@ class MemberSearch extends Member
      */
     public function search($params)
     {
-        $query = Member::find();
+        $query = Member::find()->joinWith('memberContacts');
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort' => ['attributes' => ['name', 'lastName']]
+            'sort' => ['attributes' => ['name', 'lastName', 'phone', 'email']]
         ]);
 
         $this->load($params);
@@ -66,7 +68,9 @@ class MemberSearch extends Member
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'lastName', $this->lastName]);
+            ->andFilterWhere(['like', 'lastName', $this->lastName])
+            ->andFilterWhere(['like', 'phone', $this->phone])
+            ->andFilterWhere(['like', 'email', $this->email]);
 
         return $dataProvider;
     }

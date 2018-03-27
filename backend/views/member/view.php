@@ -2,6 +2,11 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use common\models\Member;
+use common\models\MemberContact;
+use yii\data\ActiveDataProvider;
+use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Member */
@@ -25,13 +30,44 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
+    <?php
+        $dataProvider = new ActiveDataProvider([
+            'query' => Member::find()->joinWith('memberContacts')
+                ->where(['memberContact.memberId' => $model->id]),
+        ]);
+    ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
             'id',
             'name',
             'lastName',
-        ],
-    ]) ?>
 
+            [
+                'attribute' => 'phone',
+                'value' => function($model, $key, $index, $column) {
+                    $phones = $model->memberContacts;
+                    if(empty($phones))
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        return implode(', ', ArrayHelper::getColumn($phones, 'phone'));
+                    }
+                },
+            ],
+            [
+                'attribute' => 'email',
+                'value' => function($model, $key, $index, $column) {
+                    $emails = $model->memberContacts;
+                    if(empty($emails))
+                        return null;
+                    else
+                        return implode(', ', ArrayHelper::getColumn($emails, 'email'));
+                },
+            ],
+        ],
+    ]); ?>
 </div>
