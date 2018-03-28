@@ -12,6 +12,8 @@ use common\models\Video;
  */
 class VideoSearch extends Video
 {
+    public $title;
+
     /**
      * @inheritdoc
      */
@@ -19,7 +21,7 @@ class VideoSearch extends Video
     {
         return [
             [['id'], 'integer'],
-            [['name', 'video'], 'safe'],
+            [['name', 'video', 'title'], 'safe'],
         ];
     }
 
@@ -41,12 +43,13 @@ class VideoSearch extends Video
      */
     public function search($params)
     {
-        $query = Video::find();
+        $query = Video::find()->joinWith('videoProperties');
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['attributes' => ['name', 'video', 'title']]
         ]);
 
         $this->load($params);
@@ -63,7 +66,8 @@ class VideoSearch extends Video
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'video', $this->video]);
+            ->andFilterWhere(['like', 'video', $this->video])
+            ->andFilterWhere(['like', 'title', $this->title]);
 
         return $dataProvider;
     }

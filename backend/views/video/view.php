@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Video */
@@ -31,6 +32,19 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'video:ntext',
+
+            [
+                'attribute' => 'title',
+                'format' => 'text',
+                'value' => function($model) {
+                    $titles = $model->videoProperties;
+                    if(empty($titles))
+                        return null;
+                    else
+                        return implode(', ', ArrayHelper::getColumn($titles, 'title'));
+                },
+            ],
+
         ],
     ]) ?>
 

@@ -18,4 +18,19 @@ $this->params['breadcrumbs'][] = 'Update';
         'video' => $video,
     ]) ?>
 
+    <?php 
+        var_dump($video);
+    ?>
+    <hr>
+    <p>PROPERTY:</p>
+    <p><?php var_dump($property->title); ?></p>
+    <p><?php var_dump($property->image); ?></p>
+    <p><?php var_dump($property->imageWidth); ?></p>
+    <p><?php var_dump($property->imageHeight); ?></p>
+    <p><?php var_dump($property->code); ?></p>
+    <p><?php var_dump($property->width); ?></p>
+    <p><?php var_dump($property->height); ?></p>
+    <p><?php var_dump($property->providerName); ?></p>
+    <hr>
+
 </div>

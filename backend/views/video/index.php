@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\VideoSearch */
@@ -25,9 +26,23 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'name',
             'video:ntext',
+
+            [
+                'attribute' => 'title',
+                'value' => function($model, $key, $index, $column) {
+                    $titles = $model->videoProperties;
+                    if(empty($titles))
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        return implode(', ', ArrayHelper::getColumn($titles, 'title'));
+                    }
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

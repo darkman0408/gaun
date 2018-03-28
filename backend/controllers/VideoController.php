@@ -119,15 +119,40 @@ class VideoController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $video = Video::findOne($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $property = VideoProperty::findOne($video->id);
+
+        /* if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
+        } */
+
+        if ($video->load(Yii::$app->request->post()))
+        {
+            $isValid = $video->validate();
+            $isValid = $property->validate() && $isValid;
+            if($isValid)
+            {
+                $video->save();
+                $info = Embed::create($video->video);
+                $property->title = $info->title;
+                $property->image = $info->image;
+                $property->imageWidth = $info->imageWidth;
+                $property->imageHeight = $info->imageHeight;
+                $property->code = $info->code;
+                $property->width = $info->width;
+                $property->height = $info->height;
+                $property->providerName = $info->providerName;
+
+                $property->save();
+                return $this->redirect(['index']);
+            }
         }
 
         return $this->render('update', [
-            'model' => $model,
-        ]); 
+            'video' => $video,
+            'property' => $property,
+        ]);
     }
 
     /**
