@@ -75,7 +75,7 @@ class MemberController extends Controller
             'model' => $model,
         ]); */
 
-         $member = new Member();
+        $member = new Member();
 
         if(!$member)
         {

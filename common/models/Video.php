@@ -10,6 +10,8 @@ use Yii;
  * @property int $id
  * @property string $name
  * @property string $video
+ *
+ * @property VideoProperty[] $videoProperties
  */
 class Video extends \yii\db\ActiveRecord
 {
@@ -42,5 +44,13 @@ class Video extends \yii\db\ActiveRecord
             'name' => 'Name',
             'video' => 'Video',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getVideoProperties()
+    {
+        return $this->hasMany(VideoProperty::className(), ['videoId' => 'id']);
     }
 }
