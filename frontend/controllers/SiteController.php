@@ -143,6 +143,11 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    public function actionHistory()
+    {
+        return $this->render('history');
+    }
+
     /**
      * Signs user up.
      *

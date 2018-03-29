@@ -37,7 +37,22 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
+        [
+            'label' => 'About', 
+            'url' => ['/site/about'],
+            'options' => ['class' => 'dropdown'],
+            //'template' => '<a href="{url}" class="href_class">{label}></a>',
+            'items' => [
+                ['label' => 'History', 'url' => ['/site/history']],
+                ['label' => 'Activities' , 'url' => '#'],
+                ['label' => 'Documents', 'url' => '#'],
+                ['label' => 'Members', 'url' => '#'],
+            ],
+        ],
+        ['label' => 'Services', 'url' => '#'],
+        ['label' => 'News', 'url' => '#'],
+        ['label' => 'Gallery', 'url' => '#'],
+        ['label' => 'Servis Information', 'url' => '#'],
         ['label' => 'Contact', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
@@ -56,6 +71,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
+        'encodeLabels' => false,
     ]);
     NavBar::end();
     ?>

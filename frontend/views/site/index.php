@@ -2,52 +2,165 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Gaun Kaprije';
 ?>
+<?php
+
+use yii\bootstrap\Carousel;
+use yii\helpers\Html;
+use evgeniyrru\yii2slick\Slick;
+use yii\web\JsExpression;
+use frontend\assets\SlideAsset;
+
+SlideAsset::register($this);
+?>
+
+
 <div class="site-index">
+    
+    <?php
+        $items = [
+            ['content' => Html::img('images/dje-94.jpg', ['alt' => 'boy'])],
+            ['content' => Html::img('images/eko-49.jpg', ['alt' => 'diving'])],
+            ['content' => Html::img('images/mol-70.jpg', ['alt' => ''])],
+            ['content' => Html::img('images/tra-1.jpg', ['alt' => ''])],
+        ];
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
+        print Carousel::widget([
+            'items' => $items,
+            'controls' => [
+                '<span class="glyphicon glyphicon-chevron-left"></span>', '<span class="glyphicon glyphicon-chevron-right"></span>'
+            ],
+        ]);
+    ?>
 
     <div class="body-content">
 
         <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            
+            <div class="col-md-12">
+                <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3000" id="myCarousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div>
+                                <h3>News 1</h3>
+                                <hr>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
+                                </p>
+                                <p>
+                                    <a class="btn btn-default" href="#">See more...</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div>
+                                <h3>News 2</h3>
+                                <hr>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
+                                </p>
+                                <p>
+                                    <a class="btn btn-default" href="#">See more...</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div>
+                                <h3>News 3</h3>
+                                <hr>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
+                                </p>
+                                <p>
+                                    <a class="btn btn-default" href="#">See more...</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div>
+                                <h3>News 4</h3>
+                                <hr>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
+                                </p>
+                                <p>
+                                    <a class="btn btn-default" href="#">See more...</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div>
+                                <h3>News 5</h3>
+                                <hr>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
+                                </p>
+                                <p>
+                                    <a class="btn btn-default" href="#">See more...</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div>
+                                <h3>News 6</h3>
+                                <hr>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
+                                </p>
+                                <p>
+                                    <a class="btn btn-default" href="#">See more...</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div>
+                                <h3>News 7</h3>
+                                <hr>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
+                                </p>
+                                <p>
+                                    <a class="btn btn-default" href="#">See more...</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div>
+                                <h3>News 8</h3>
+                                <hr>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
+                                </p>
+                                <p>
+                                    <a class="btn btn-default" href="#">See more...</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
             </div>
         </div>
 
     </div>
+
+    </div>
+
 </div>

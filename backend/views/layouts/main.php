@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use backend\assets\AppAsset;
+use backend\assets\NavAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -11,6 +12,7 @@ use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 
 AppAsset::register($this);
+NavAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -26,17 +28,32 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => 'Gaun',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-inverse sidebar',
+            'role' => 'navigation',
         ],
+        'innerContainerOptions' => ['class' => 'container-fluid'],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        [
+            'label' => 'Home' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/site/index']
+        ],
+        [
+            'label' => 'Members' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/member/index']
+        ],
+        [
+            'label' => 'Services' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/services/index']
+        ],
+        [
+            'label' => 'Images' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/image/index']
+        ],
+        [
+            'label' => 'Video' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/video/index']
+        ],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -51,11 +68,14 @@ AppAsset::register($this);
             . '</li>';
     }
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav',],
         'items' => $menuItems,
+        'encodeLabels' => false,
     ]);
     NavBar::end();
     ?>
+
+    <div class="black"></div>
 
     <div class="container">
         <?= Breadcrumbs::widget([
@@ -64,7 +84,7 @@ AppAsset::register($this);
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
-</div>
+
 
 <footer class="footer">
     <div class="container">

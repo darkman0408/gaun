@@ -44,6 +44,39 @@ $this->params['breadcrumbs'][] = $this->title;
                         return implode(', ', ArrayHelper::getColumn($titles, 'title'));
                 },
             ],
+            [
+                'attribute' => 'code',
+                'format' => 'text',
+                'value' => function($model) {
+                    $codes = $model->videoProperties;
+                    if(empty($codes))
+                        return null;
+                    else
+                        return implode(', ', ArrayHelper::getColumn($codes, 'code'));
+                },
+            ],
+            [
+                'attribute' => 'image',
+                'format' => 'text',
+                'value' => function($model) {
+                    $images = $model->videoProperties;
+                    if(empty($images))
+                        return null;
+                    else
+                        return implode(', ', ArrayHelper::getColumn($images, 'image'));
+                },
+            ],
+            [
+                'attribute' => 'providerName',
+                'format' => 'text',
+                'value' => function($model) {
+                    $providerNames = $model->videoProperties;
+                    if(empty($providerNames))
+                        return null;
+                    else
+                        return implode(', ', ArrayHelper::getColumn($providerNames, 'providerName'));
+                },
+            ],
 
         ],
     ]) ?>

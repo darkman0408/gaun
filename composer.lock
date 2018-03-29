@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb39b5c4cb5511e133ac9cc357eca018",
+    "content-hash": "0c8954c68943efe6ccb1cd145a4f0532",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -103,6 +103,28 @@
                 "shasum": null
             },
             "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/slick-carousel",
+            "version": "v1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kenwheeler/slick.git",
+                "reference": "0f40c9d6a02a5c08b5f4dd80fdada3a854a59bee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kenwheeler/slick/zipball/0f40c9d6a02a5c08b5f4dd80fdada3a854a59bee",
+                "reference": "0f40c9d6a02a5c08b5f4dd80fdada3a854a59bee",
+                "shasum": null
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "bower-asset/yii2-pjax",
@@ -405,6 +427,49 @@
                 "twitter cards"
             ],
             "time": "2018-02-24T11:23:18+00:00"
+        },
+        {
+            "name": "evgeniyrru/yii2-slick",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EvgeniyRRU/yii2-slick.git",
+                "reference": "65fb112e67a230805cac07f8c3f372b25502be2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/EvgeniyRRU/yii2-slick/zipball/65fb112e67a230805cac07f8c3f372b25502be2c",
+                "reference": "65fb112e67a230805cac07f8c3f372b25502be2c",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/slick-carousel": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "evgeniyrru\\yii2slick\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Evgeniy Chernyshev",
+                    "email": "EvgeniyRRU@gmail.com"
+                }
+            ],
+            "description": "Yii2 extension for Slick Carousel",
+            "keywords": [
+                "carousel",
+                "extension",
+                "widget",
+                "yii"
+            ],
+            "time": "2017-03-31T07:00:27+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -779,6 +844,52 @@
                 "yii2"
             ],
             "time": "2015-06-20T17:21:59+00:00"
+        },
+        {
+            "name": "mickgeek/yii2-daslider",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mickgeek/yii2-daslider.git",
+                "reference": "9cc823ad0c713b9eaac8e4e4dc77b5d3025007b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mickgeek/yii2-daslider/zipball/9cc823ad0c713b9eaac8e4e4dc77b5d3025007b9",
+                "reference": "9cc823ad0c713b9eaac8e4e4dc77b5d3025007b9",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "mickgeek\\daslider\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Oleg Belostotskiy",
+                    "email": "olgblst@gmail.com",
+                    "homepage": "http://mickgeek.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Content slider with delayed animations and background parallax effect.",
+            "homepage": "https://github.com/mickgeek/yii2-daslider",
+            "keywords": [
+                "extension",
+                "parallax",
+                "slider",
+                "widget",
+                "yii2"
+            ],
+            "time": "2014-08-16T09:03:11+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
