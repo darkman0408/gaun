@@ -44,8 +44,8 @@ AppAsset::register($this);
             //'template' => '<a href="{url}" class="href_class">{label}></a>',
             'items' => [
                 ['label' => 'History', 'url' => ['/site/history']],
-                ['label' => 'Activities' , 'url' => '#'],
-                ['label' => 'Documents', 'url' => '#'],
+                ['label' => 'Activities' , 'url' => ['/site/activities']],
+                ['label' => 'Documents', 'url' => ['/site/document']],
                 ['label' => 'Members', 'url' => '#'],
             ],
         ],
