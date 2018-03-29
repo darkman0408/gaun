@@ -12,6 +12,8 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use common\models\Document;
+use common\models\DocumentSearch;
 
 /**
  * Site controller
@@ -146,6 +148,20 @@ class SiteController extends Controller
     public function actionHistory()
     {
         return $this->render('history');
+    }
+
+    public function actionActivities()
+    {
+        return $this->render('activities');
+    }
+
+    public function actionDocument()
+    {
+        $model = new Document();
+
+        return $this->render('document', [
+            'model' => $model,
+        ]);
     }
 
     /**

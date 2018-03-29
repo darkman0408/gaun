@@ -54,6 +54,9 @@ NavAsset::register($this);
         [
             'label' => 'Video' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/video/index']
         ],
+        [
+            'label' => 'Documents' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/document/index']
+        ],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
