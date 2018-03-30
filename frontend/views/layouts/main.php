@@ -45,8 +45,8 @@ AppAsset::register($this);
             'items' => [
                 ['label' => 'History', 'url' => ['/site/history']],
                 ['label' => 'Activities' , 'url' => ['/site/activities']],
-                ['label' => 'Documents', 'url' => ['/site/document']],
-                ['label' => 'Members', 'url' => '#'],
+                ['label' => 'Documents', 'url' => ['/document/index']],
+                ['label' => 'Members', 'url' => ['/site/members']],
             ],
         ],
         ['label' => 'Services', 'url' => '#'],

@@ -47,20 +47,17 @@ class Document extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
+     /**
      * Upload file
      */
     public function upload()
     {
         $fileName = $this->fileDoc->baseName;
         $extension = $this->fileDoc->extension;
-
         if($this->validate())
         {
             $filePath = 'uploads/documents/' . $fileName . '.' . $extension;
-
             $this->fileDoc->saveAs($filePath);
-
             $this->fileDoc = null;
             $this->document = $filePath;
             
