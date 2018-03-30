@@ -12,8 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-use common\models\Document;
-use common\models\DocumentSearch;
+use common\models\Member;
 
 /**
  * Site controller
@@ -155,11 +154,11 @@ class SiteController extends Controller
         return $this->render('activities');
     }
 
-    public function actionDocument()
+    public function actionMembers()
     {
-        $model = new Document();
+        $model = Member::find()->all();
 
-        return $this->render('document', [
+        return $this->render('members', [
             'model' => $model,
         ]);
     }

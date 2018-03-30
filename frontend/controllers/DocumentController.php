@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\controllers;
+namespace frontend\controllers;
 
 use Yii;
 use common\models\Document;
@@ -8,7 +8,6 @@ use common\models\DocumentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
 
 /**
  * DocumentController implements the CRUD actions for Document model.
@@ -67,25 +66,13 @@ class DocumentController extends Controller
     {
         $model = new Document();
 
-        /* if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
-        ]); */
-
-        if($model->load(Yii::$app->request->post()))
-        {
-            $model->fileDoc = UploadedFile::getInstance($model, 'fileDoc');
-            
-            if($model->fileDoc)
-                $model->upload();
-            $model->save();
-            return $this->redirect(['create']);
-        } 
-        else      
-            return $this->render('create', ['model' => $model,]);
+        ]);
     }
 
     /**
@@ -120,6 +107,27 @@ class DocumentController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function actionFile($filename)
+    {
+        $storagePath = "uploads/documents/";
+        $filename = str_replace($storagePath, "", $filename);
+        $completPath = $storagePath . $filename;
+
+        // check filename for allowed chars (do not allow ../ to avoid security issue: downloading arbitrary files)
+        /* if(!preg_match('/^[a-z0-9]+\.[a-z0-9]+$/i', $filename) || !is_file($completPath))
+        {
+            throw new NotFoundHttpException('The file does not exists.');
+        } */
+
+        /* return $this->render('file', [
+            'filename' => $filename,
+        ]); */
+
+        //Yii::getAlias('@docUrl') /var/www/gaun/backend/web
+
+        return Yii::$app->response->sendFile(Yii::getAlias('@docUrl') . '/' . $completPath, $filename, ['inline'=>true]);
     }
 
     /**
