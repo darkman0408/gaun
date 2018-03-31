@@ -13,6 +13,8 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use common\models\Member;
+use common\models\Services;
+use common\models\News;
 
 /**
  * Site controller
@@ -159,6 +161,24 @@ class SiteController extends Controller
         $model = Member::find()->all();
 
         return $this->render('members', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionServices()
+    {
+        $model = Services::find()->all();
+
+        return $this->render('services', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionNews()
+    {
+        $model = News::find()->all();
+
+        return $this->render('news', [
             'model' => $model,
         ]);
     }

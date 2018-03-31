@@ -12,7 +12,6 @@ use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 
 AppAsset::register($this);
-NavAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -33,29 +32,28 @@ NavAsset::register($this);
         'brandLabel' => 'Gaun',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse sidebar',
+            'class' => 'navbar-inverse navbar-fixed-top',
             'role' => 'navigation',
         ],
-        'innerContainerOptions' => ['class' => 'container-fluid'],
     ]);
     $menuItems = [
         [
-            'label' => 'Home' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/site/index']
+            'label' => 'Documents', 'url' => ['/document/index']
         ],
         [
-            'label' => 'Members' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/member/index']
+            'label' => 'Images', 'url' => ['/image/index']
         ],
         [
-            'label' => 'Services' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/services/index']
+            'label' => 'Members', 'url' => ['/member/index']
         ],
         [
-            'label' => 'Images' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/image/index']
+            'label' => 'News', 'url' => ['/news/index']
         ],
         [
-            'label' => 'Video' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/video/index']
+            'label' => 'Services', 'url' => ['/services/index']
         ],
         [
-            'label' => 'Documents' . '<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>', 'url' => ['/document/index']
+            'label' => 'Video', 'url' => ['/video/index']
         ],
     ];
     if (Yii::$app->user->isGuest) {
@@ -71,14 +69,12 @@ NavAsset::register($this);
             . '</li>';
     }
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav',],
+        'options' => ['class' => 'navbar-nav navbar-right',],
         'items' => $menuItems,
         'encodeLabels' => false,
     ]);
     NavBar::end();
     ?>
-
-    <div class="black"></div>
 
     <div class="container">
         <?= Breadcrumbs::widget([

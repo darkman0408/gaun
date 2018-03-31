@@ -24,7 +24,8 @@
         "yiisoft/yii2-imagine": "^2.1",
         "embed/embed": "^3.3",
         "mickgeek/yii2-daslider": "^1.0",
-        "evgeniyrru/yii2-slick": "*"
+        "evgeniyrru/yii2-slick": "*",
+        "vova07/yii2-imperavi-widget": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
