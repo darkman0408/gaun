@@ -25,7 +25,8 @@
         "embed/embed": "^3.3",
         "mickgeek/yii2-daslider": "^1.0",
         "evgeniyrru/yii2-slick": "*",
-        "vova07/yii2-imperavi-widget": "*"
+        "vova07/yii2-imperavi-widget": "*",
+        "kartik-v/yii2-tabs-x": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
+use yii\web\NotFoundHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -15,6 +16,7 @@ use frontend\models\ContactForm;
 use common\models\Member;
 use common\models\Services;
 use common\models\News;
+use common\models\Image;
 
 /**
  * Site controller
@@ -179,6 +181,29 @@ class SiteController extends Controller
         $model = News::find()->all();
 
         return $this->render('news', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionMoreNews($id)
+    {
+        $model = News::findOne($id);
+
+        if(!$model)
+        {
+            throw new NotFoundHttpException();
+        }
+
+        return $this->render('more-news', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionGallery()
+    {
+        $model = Image::find()->all();
+
+        return $this->render('gallery', [
             'model' => $model,
         ]);
     }
