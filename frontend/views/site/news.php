@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
 
     <div class="row">
         <?php 
-        
+
         $data = [];
 
         foreach($model as $val) : ?>

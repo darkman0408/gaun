@@ -70,17 +70,29 @@ class Image extends \yii\db\ActiveRecord
             $filePath = 'uploads/images/image/' . $imageName . '.' . $extension;
             $thumbPath = 'uploads/images/thumb/' . $imageName . '.' . $extension;
 
+            $frontFilePath = Yii::getAlias('@frontWeb') . '/uploads/images/image/' . $imageName . '.' . $extension;
+            $frontThumbPath = Yii::getAlias('@frontWeb') . '/uploads/images/thumb/' . $imageName . '.' . $extension;
 
-            $this->imageFile->saveAs($filePath);
+
+            $this->imageFile->saveAs($filePath, false);
+
+            $this->imageFile->saveAs($frontFilePath);
 
             // thumbnail
             Imagine::thumbnail($filePath, 120, 120)
                 ->save($thumbPath, ['quality' => 50]);
 
+            Imagine::thumbnail($filePath, 120, 120)
+                ->save($frontThumbPath, ['quality' => 50]);
+
             $this->imageFile = null;
             $this->image = $filePath;
+
+            $this->image = $frontFilePath;
             
             $this->thumbnail = $thumbPath;
+
+            $this->thumbnail = $frontThumbPath;
             
             return true;
         }
