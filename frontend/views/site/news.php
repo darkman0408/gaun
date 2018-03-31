@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
                 <div class="caption">
                     <h3><?= $val->title ?></h3>
                     <p><?= $val->lead_text ?></p>
-                    <p><a href="#" class="btn btn-primary" role="button">More</a></p>
+                    <p><?= Html::a('Read more', ['/site/more-news', 'id' => $val->id], ['class' => 'btn btn-primary']) ?></p>
                 </div>
 
             </div>
