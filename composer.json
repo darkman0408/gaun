@@ -26,7 +26,8 @@
         "mickgeek/yii2-daslider": "^1.0",
         "evgeniyrru/yii2-slick": "*",
         "vova07/yii2-imperavi-widget": "*",
-        "kartik-v/yii2-tabs-x": "*"
+        "kartik-v/yii2-tabs-x": "*",
+        "powerkernel/yii2-photoswipe": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

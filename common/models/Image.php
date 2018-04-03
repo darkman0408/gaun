@@ -88,11 +88,11 @@ class Image extends \yii\db\ActiveRecord
             $this->imageFile = null;
             $this->image = $filePath;
 
-            $this->image = $frontFilePath;
+            //$this->image = $frontFilePath;
             
             $this->thumbnail = $thumbPath;
 
-            $this->thumbnail = $frontThumbPath;
+            //$this->thumbnail = $frontThumbPath;
             
             return true;
         }
