@@ -37,26 +37,26 @@ GalleryAsset::register($this);
                         // get image size
                         list($width, $height) = getimagesize("uploads/images/image/" . findImageName($val->thumbnail));
                     ?>
-                    <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+                    
                         <div class="col-md-<?= $bootstrapCol ?>">
-                            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                            <figure >
                                 <a href="uploads/images/image/<?= findImageName($val->thumbnail) ?>" class="thumbnail" data-size="<?= $width . 'x' . $height ?>">
                                     <?php
                                         // print thumb 
-                                        print Html::img($val->thumbnail); 
+                                        print Html::img($val->thumbnail, $options = []); 
                                     ?> 
                                 </a>
-                                <figcaption itemprop="caption description"></figcaption>
+                                <figcaption >
                             </figure>     
                         </div>
-                    </div> <!-- My gallery -->
+                    
                 <?php
                     $count++;
                     if($count % $numOfCols == 0)
                         print '</div><div class="row">';
                 ?>                
                 <?php endforeach; ?>
-                </div> <!-- close row -->             
+                </div> <!-- close row -->            
             </div>
 
             <div role="tabpanel" class="tab-pane" id="videos">
