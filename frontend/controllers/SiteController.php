@@ -17,6 +17,8 @@ use common\models\Member;
 use common\models\Services;
 use common\models\News;
 use common\models\Image;
+use common\models\Video;
+use common\models\VideoProperty;
 
 /**
  * Site controller
@@ -203,8 +205,11 @@ class SiteController extends Controller
     {
         $model = Image::find()->all();
 
+        $video = VideoProperty::find()->all();
+
         return $this->render('gallery', [
             'model' => $model,
+            'video' => $video,
         ]);
     }
 
