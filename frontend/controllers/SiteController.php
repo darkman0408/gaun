@@ -213,6 +213,11 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionServiceInfo()
+    {
+        return $this->render('service-info');
+    }
+
     /**
      * Signs user up.
      *
