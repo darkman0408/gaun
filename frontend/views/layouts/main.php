@@ -87,9 +87,45 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <div class="row">
+            <div class="col-md-3">
+                <ul>
+                    <li><?= Html::a('Home', ['/site/index']) ?></li>
+                    <li><?= Html::a('Services', ['/site/services']) ?></li>
+                    <li><?= Html::a('News', ['/site/news']) ?></li>
+                    <li><?= Html::a('Gallery', ['/site/gallery']) ?></li>
+                    <li><?= Html::a('Servis Information', ['/site/service-info']) ?></li>
+                    <li><?= Html::a('Contact', ['/site/contact']) ?></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <p>About</p>
+                <ul>
+                    <li><?= Html::a('History', ['/site/history']) ?></li>
+                    <li><?= Html::a('Activities', ['/site/activities']) ?></li>
+                    <li><?= Html::a('Documents', ['/documents/index']) ?></li>
+                    <li><?= Html::a('Members', ['/site/members']) ?></li>                  
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <p>Contact</p>
+                <ul>
+                    <li>Ivo Radovčić</li>
+                    <li>+385(0)98 943 5293</li>
+                    <li>Zlatko Jelovčić</li>
+                    <li>+385(0)99 379 0858</li>
+                    <li>tajnik@skrmgaun.hr</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul>
+                    <li>Alen Radovčić</li>
+                    <li>+385(0)98 526 250</li>
+                    <li>Čedo Radovčić</li>
+                    <li>+385(0)99 596 0717</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </footer>
 

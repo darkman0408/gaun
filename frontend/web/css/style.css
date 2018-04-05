@@ -35,8 +35,21 @@ body {
     white-space: nowrap;
 }
 
-#map
-{
+#map {
     height: 400px;
     width: 100%;
+}
+
+.footer {
+    font-size: 10px;
+}
+
+.footer ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.footer p {
+    text-align: center;
+    font-weight: bold;
 }
