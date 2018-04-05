@@ -1,38 +1,42 @@
-body
-{
+body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.site-about p
-{
+.site-about p {
     font-size: 14px;
 }
 
-.col-sm-6
-{
+.col-sm-6 {
     padding: 0;
 }
 
-.text
-{
+.text {
     padding-right: 6px;
     padding-left: 6px;
 }
 
-.panel
-{
+.panel {
     text-align: center;
-} 
+}
 
-.name-header
-{
+.name-header {
     background: #222;
     color: white;
     text-align: center;
     padding: 6px;
 }
 
-.service-row
-{
+.service-row {
     padding: 10px;
+}
+
+.site-gallery .slider {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+#map
+{
+    height: 400px;
+    width: 100%;
 }

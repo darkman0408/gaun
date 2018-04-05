@@ -7,6 +7,7 @@ use frontend\assets\GalleryAsset;
 $this->title = 'Gallery';
 $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
 
+GalleryAsset::register($this);
 ?>
 
 
@@ -29,25 +30,20 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
                 $numOfCols = 6; // must be factor of 12 (1, 2, 3, 4, 6, 12)
                 $bootstrapCol = 12 / $numOfCols; 
             ?>
-                <div class="row">
-
+    
+                <div id="lightgallery" class="row">
                     <?php foreach($model as $val): ?>
 
-                    <?php
-                        // get image size
-                        list($width, $height) = getimagesize("uploads/images/image/" . findImageName($val->thumbnail));
-                    ?>
-                    
-                        <div class="col-md-<?= $bootstrapCol ?>">
                             
-                                <a href="uploads/images/image/<?= findImageName($val->thumbnail) ?>" class="thumbnail">
+                            <a href="uploads/images/image/<?= findImageName($val->thumbnail) ?>" class="thumbnail slider">
+                                <div class="slider">
                                     <?php
                                         // print thumb 
                                         print Html::img($val->thumbnail, $options = []); 
-                                    ?> 
-                                </a>
+                                    ?>
+                                </div> 
+                            </a>    
                             
-                        </div>
                     
                 <?php
                     $count++;
@@ -55,8 +51,7 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
                         print '</div><div class="row">';
                 ?>                
                 <?php endforeach; ?>
-                </div> <!-- close row -->  
-                
+                </div> <!-- close row -->           
             </div>
 
             <div role="tabpanel" class="tab-pane" id="videos">
@@ -103,3 +98,9 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
         return $filename;
     }
 ?>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#lightgallery").lightGallery(); 
+    });
+</script>
