@@ -127,9 +127,9 @@ class SiteController extends Controller
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+                Yii::$app->session->setFlash(Yii::t('frontend', 'success'), Yii::t('frontend', 'Thank you for contacting us. We will respond to you as soon as possible.'));
             } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+                Yii::$app->session->setFlash(Yii::t('frontend', 'error'), Yii::t('frontend', 'There was an error sending your message.'));
             }
 
             return $this->refresh();
@@ -249,11 +249,11 @@ class SiteController extends Controller
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
+                Yii::$app->session->setFlash(Yii::t('frontend', 'success'), Yii::t('frontend', 'Check your email for further instructions.'));
 
                 return $this->goHome();
             } else {
-                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
+                Yii::$app->session->setFlash(Yii::t('frontend', 'error'), Yii::t('frontend', 'Sorry, we are unable to reset password for the provided email address.'));
             }
         }
 
@@ -278,7 +278,7 @@ class SiteController extends Controller
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->session->setFlash('success', 'New password saved.');
+            Yii::$app->session->setFlash(Yii::t('frontend', 'success'), Yii::t('frontend', 'New password saved.'));
 
             return $this->goHome();
         }

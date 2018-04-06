@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
     <div class="row">
         <div class="col-sm-6">
             <div>
-                <img src="images/clanovi1.jpg" alt="kaprije balote" class="img-thumbnail">
+                <img src="/images/clanovi1.jpg" alt="kaprije balote" class="img-thumbnail">
             </div>
         </div>
         <div class="col-sm-6">
@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
         </div>
         <div class="col-sm-6">
             <div>
-                <img src="images/clanovi2.jpg" alt="kaprije balote" class="img-thumbnail">
+                <img src="/images/clanovi2.jpg" alt="kaprije balote" class="img-thumbnail">
             </div>
         </div>
     </div>

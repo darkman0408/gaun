@@ -20,10 +20,10 @@ SlideAsset::register($this);
     
     <?php
         $items = [
-            ['content' => Html::img('images/dje-94.jpg', ['alt' => 'boy'])],
-            ['content' => Html::img('images/eko-49.jpg', ['alt' => 'diving'])],
-            ['content' => Html::img('images/mol-70.jpg', ['alt' => ''])],
-            ['content' => Html::img('images/tra-1.jpg', ['alt' => ''])],
+            ['content' => Html::img('/images/dje-94.jpg', ['alt' => 'boy'])],
+            ['content' => Html::img('/images/eko-49.jpg', ['alt' => 'diving'])],
+            ['content' => Html::img('/images/mol-70.jpg', ['alt' => ''])],
+            ['content' => Html::img('/images/tra-1.jpg', ['alt' => ''])],
         ];
 
         print Carousel::widget([

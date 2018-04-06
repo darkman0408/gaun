@@ -35,11 +35,11 @@ GalleryAsset::register($this);
                     <?php foreach($model as $val): ?>
 
                             
-                            <a href="uploads/images/image/<?= findImageName($val->thumbnail) ?>" class="thumbnail slider">
+                            <a href="/uploads/images/image/<?= findImageName($val->thumbnail) ?>" class="thumbnail slider">
                                 <div class="slider">
                                     <?php
                                         // print thumb 
-                                        print Html::img($val->thumbnail, $options = []); 
+                                        print Html::img('/' . $val->thumbnail, $options = []); 
                                     ?>
                                 </div> 
                             </a>    

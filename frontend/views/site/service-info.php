@@ -15,12 +15,12 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
     <div class="row">
         <div class="col-md-6">
             <a href="#" class="thumbnail">
-                <img src="images/map-1.jpg" alt="kaprije mapa" />
+                <img src="/images/map-1.jpg" alt="kaprije mapa" />
             </a>
         </div>
         <div class="col-md-6">
             <a href="#" class="thumbnail">    
-                <img src="images/mapKaprije1.png" alt="kaprije mapa" />               
+                <img src="/images/mapKaprije1.png" alt="kaprije mapa" />               
             </a>
         </div>
     </div>

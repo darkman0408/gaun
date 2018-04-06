@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="col-md-4">
             <a href="#" class="thumbnail">
-                <img src="images/Gaun-1-5.jpg" alt="contact" />
+                <img src="/images/Gaun-1-5.jpg" alt="contact" />
             </a>
         </div>
         <div class="col-md-4">

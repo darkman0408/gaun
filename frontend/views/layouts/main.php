@@ -29,40 +29,40 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => 'Gaun',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => Yii::t('frontend', 'Home'), 'url' => ['/site/index']],
         [
-            'label' => 'About', 
+            'label' => Yii::t('frontend', 'About'), 
             'url' => ['/site/about'],
             'options' => ['class' => 'dropdown'],
             //'template' => '<a href="{url}" class="href_class">{label}></a>',
             'items' => [
-                ['label' => 'History', 'url' => ['/site/history']],
-                ['label' => 'Activities' , 'url' => ['/site/activities']],
-                ['label' => 'Documents', 'url' => ['/document/index']],
-                ['label' => 'Members', 'url' => ['/site/members']],
+                ['label' => Yii::t('frontend', 'History'), 'url' => ['/site/history']],
+                ['label' => Yii::t('frontend', 'Activities') , 'url' => ['/site/activities']],
+                ['label' => Yii::t('frontend', 'Documents'), 'url' => ['/document/index']],
+                ['label' => Yii::t('frontend', 'Members'), 'url' => ['/site/members']],
             ],
         ],
-        ['label' => 'Services', 'url' => ['site/services']],
-        ['label' => 'News', 'url' => ['/site/news']],
-        ['label' => 'Gallery', 'url' => ['/site/gallery']],
-        ['label' => 'Servis Information', 'url' => ['/site/service-info']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => Yii::t('frontend', 'Services'), 'url' => ['site/services']],
+        ['label' => Yii::t('frontend', 'News'), 'url' => ['/site/news']],
+        ['label' => Yii::t('frontend', 'Gallery'), 'url' => ['/site/gallery']],
+        ['label' => Yii::t('frontend', 'Servis Information'), 'url' => ['/site/service-info']],
+        ['label' => Yii::t('frontend', 'Contact'), 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => Yii::t('frontend', 'Signup'), 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => Yii::t('frontend', 'Login'), 'url' => ['/site/login']];
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
+                Yii::t('frontend', 'Logout (' . Yii::$app->user->identity->username . ')'),
                 ['class' => 'btn btn-link logout']
             )
             . Html::endForm()
@@ -90,21 +90,21 @@ AppAsset::register($this);
         <div class="row">
             <div class="col-md-3">
                 <ul>
-                    <li><?= Html::a('Home', ['/site/index']) ?></li>
-                    <li><?= Html::a('Services', ['/site/services']) ?></li>
-                    <li><?= Html::a('News', ['/site/news']) ?></li>
-                    <li><?= Html::a('Gallery', ['/site/gallery']) ?></li>
-                    <li><?= Html::a('Servis Information', ['/site/service-info']) ?></li>
-                    <li><?= Html::a('Contact', ['/site/contact']) ?></li>
+                    <li><?= Html::a(Yii::t('frontend', 'Home'), ['/site/index']) ?></li>
+                    <li><?= Html::a(Yii::t('frontend', 'Services'), ['/site/services']) ?></li>
+                    <li><?= Html::a(Yii::t('frontend', 'News'), ['/site/news']) ?></li>
+                    <li><?= Html::a(Yii::t('frontend', 'Gallery'), ['/site/gallery']) ?></li>
+                    <li><?= Html::a(Yii::t('frontend', 'Servis Information'), ['/site/service-info']) ?></li>
+                    <li><?= Html::a(Yii::t('frontend', 'Contact'), ['/site/contact']) ?></li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <p>About</p>
                 <ul>
-                    <li><?= Html::a('History', ['/site/history']) ?></li>
-                    <li><?= Html::a('Activities', ['/site/activities']) ?></li>
-                    <li><?= Html::a('Documents', ['/documents/index']) ?></li>
-                    <li><?= Html::a('Members', ['/site/members']) ?></li>                  
+                    <li><?= Html::a(Yii::t('frontend', 'History'), ['/site/history']) ?></li>
+                    <li><?= Html::a(Yii::t('frontend', 'Activities'), ['/site/activities']) ?></li>
+                    <li><?= Html::a(Yii::t('frontend', 'Documents'), ['/documents/index']) ?></li>
+                    <li><?= Html::a(Yii::t('frontend', 'Members'), ['/site/members']) ?></li>                  
                 </ul>
             </div>
             <div class="col-md-3">

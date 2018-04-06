@@ -28,14 +28,14 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
         </div>
         <div class="col-sm-6">
             <div>
-                <img src="images/mol-70.jpg" alt="kaprije balote" class="img-thumbnail">
+                <img src="/images/mol-70.jpg" alt="kaprije balote" class="img-thumbnail">
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
             <div>
-                <img src="images/eko-49.jpg" alt="eco" class="img-thumbnail">
+                <img src="/images/eko-49.jpg" alt="eco" class="img-thumbnail">
             </div>
         </div>
         <div class="col-sm-6">

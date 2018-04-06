@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'sourcePath' => '@yii',
+    'sourcePath' => __DIR__. DIRECTORY_SEPARATOR .'..',
     'languages' => ['hr-HR'], //Add languages to the array for the language files to be generated.
     'translator' => 'Yii::t',
     'sort' => false,
