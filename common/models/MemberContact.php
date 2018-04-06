@@ -46,10 +46,10 @@ class MemberContact extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'memberId' => 'Member ID',
-            'phone' => 'Phone',
-            'email' => 'Email',
+            'id' => Yii::t('app','ID'),
+            'memberId' => Yii::t('app','Member ID'),
+            'phone' => Yii::t('app','Phone'),
+            'email' => Yii::t('app','Email'),
         ];
     }
 

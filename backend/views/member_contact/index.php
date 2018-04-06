@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\MemberContactSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Member Contacts';
+$this->title = Yii::t('app', 'Member Contacts');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="member-contact-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Member Contact', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Member Contact'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

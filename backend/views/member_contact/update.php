@@ -5,10 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\MemberContact */
 
-$this->title = 'Update Member Contact: {nameAttribute}';
-$this->params['breadcrumbs'][] = ['label' => 'Member Contacts', 'url' => ['index']];
+$this->title = Yii::t('app', 'Update Member Contact: {nameAttribute}', [
+    'nameAttribute' => $model->id,
+]);
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Member Contacts'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
 <div class="member-contact-update">
 

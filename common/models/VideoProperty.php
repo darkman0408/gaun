@@ -51,16 +51,16 @@ class VideoProperty extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'videoId' => 'Video ID',
-            'title' => 'Title',
-            'image' => 'Image',
-            'imageWidth' => 'Image Width',
-            'imageHeight' => 'Image Height',
-            'code' => 'Code',
-            'width' => 'Width',
-            'height' => 'Height',
-            'providerName' => 'Provider Name',
+            'id' => Yii::t('app', 'ID'),
+            'videoId' => Yii::t('app', 'Video ID'),
+            'title' => Yii::t('app', 'Title'),
+            'image' => Yii::t('app', 'Image'),
+            'imageWidth' => Yii::t('app', 'Image Width'),
+            'imageHeight' => Yii::t('app', 'Image Height'),
+            'code' => Yii::t('app', 'Code'),
+            'width' => Yii::t('app', 'Width'),
+            'height' => Yii::t('app', 'Height'),
+            'providerName' => Yii::t('app', 'Provider Name'),
         ];
     }
 

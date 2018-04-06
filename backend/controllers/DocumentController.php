@@ -66,15 +66,7 @@ class DocumentController extends Controller
     public function actionCreate()
     {
         $model = new Document();
-
-        /* if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]); */
-
+        
         if($model->load(Yii::$app->request->post()))
         {
             $model->fileDoc = UploadedFile::getInstance($model, 'fileDoc');
@@ -135,6 +127,6 @@ class DocumentController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 }

@@ -51,14 +51,14 @@ class News extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'title' => 'Title',
-            'slug' => 'Slug',
-            'lead_photo' => 'Lead Photo',
-            'lead_text' => 'Lead Text',
-            'content' => 'Content',
-            'createdAt' => 'Created At',
-            'updatedAt' => 'Updated At',
+            'id' => Yii::t('app', 'ID'),
+            'title' => Yii::t('app', 'Title'),
+            'slug' => Yii::t('app', 'Slug'),
+            'lead_photo' => Yii::t('app', 'Lead Photo'),
+            'lead_text' => Yii::t('app', 'Lead Text'),
+            'content' => Yii::t('app', 'Content'),
+            'createdAt' => Yii::t('app', 'Created At'),
+            'updatedAt' => Yii::t('app', 'Updated At'),
         ];
     }
 

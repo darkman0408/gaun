@@ -43,9 +43,9 @@ class Member extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'lastName' => 'Last Name',
+            'id' => Yii::t('app','ID'),
+            'name' => Yii::t('app','Name'),
+            'lastName' => Yii::t('app','Last Name'),
         ];
     }
 

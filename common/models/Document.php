@@ -41,9 +41,9 @@ class Document extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'document' => 'Document',
+            'id' => Yii::t('app', 'ID'),
+            'name' => Yii::t('app', 'Name'),
+            'document' => Yii::t('app','Document'),
         ];
     }
 
