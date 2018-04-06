@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Video */
 
-$this->title = 'Create Video';
-$this->params['breadcrumbs'][] = ['label' => 'Videos', 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Video');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Videos'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="video-create">

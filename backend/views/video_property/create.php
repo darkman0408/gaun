@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\VideoProperty */
 
-$this->title = 'Create Video Property';
-$this->params['breadcrumbs'][] = ['label' => 'Video Properties', 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Video Property');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Video Properties'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="video-property-create">

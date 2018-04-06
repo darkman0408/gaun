@@ -5,10 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\VideoProperty */
 
-$this->title = 'Update Video Property: {nameAttribute}';
-$this->params['breadcrumbs'][] = ['label' => 'Video Properties', 'url' => ['index']];
+$this->title = Yii::t('app', 'Update Video Property: {nameAttribute}', [
+    'nameAttribute' => $model->title,
+]);
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Video Properties'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
 <div class="video-property-update">
 

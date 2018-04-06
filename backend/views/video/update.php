@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Video */
 
-$this->title = 'Update Video: ' . $video->name;
-$this->params['breadcrumbs'][] = ['label' => 'Videos', 'url' => ['index']];
+$this->title = Yii::t('app', 'Update Video: ') . $video->name;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Videos'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $video->name, 'url' => ['view', 'id' => $video->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
 <div class="video-update">
 
