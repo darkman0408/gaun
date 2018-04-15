@@ -17,41 +17,98 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Body' => '',
+    'CSFS „Gaun” was established at the inaugural session of the meeting held on 25. January 1998. It is registered in 
+                    association with Šibenik – Knin county on 05. February 1998 on the initiative of Ante Radovčića pok Luke, Ante Radovčića 
+                    pok Martina and Čede Jelovčića.' => '',
+    'Club is counting few dozen active members.' => '',
+    'Mooring:' => 'Privezivač',
+    'President' => 'Predsjednik',
+    'Secretary' => 'Tajnik',
+    'This is the About page. You may modify the following file to customize its content:' => '',
+    'email' => '',
+    'Header...' => '@@Naslov...@@',
+    'body' => '@@tijelo@@',
+    'name' => '@@ime@@',
+    'subject' => '@@predmet@@',
+    'verifyCode' => '@@verificirajKod@@',
     'About' => 'O nama',
     'Activities' => 'Aktivnosti',
-    'Body' => '',
+    'Always smiling with clubs president' => 'Uvijek nasmiješeni sa predsjednikom kluba Ivo Radovčić',
     'Check your email for further instructions.' => 'Provjerite email za dodatne upute',
     'Contact' => 'Kontakt',
     'Documents' => 'Dokumenti',
+    'During the war everywhere in Croatia dimming was mandatory. It was also forbidden to use bigger boats, fishing vessels, 
+                    trawlers or purse seine boats for fishing. The army allowed only small boats. There were only around ten to twelve of them 
+                    and our fishermen used to fish for Gavun. The popular places for fishing were Punta and Pomašnjak. Since there was no food 
+                    during the war, the Kaprian Gaun\'s fed half the city of Šibenik. This is the reason we decided to name the club after 
+                    the fish Gaun – this is how we call this little fish.' => 'Tijekom domovinskog rata, kao i svugdje u Hrvatskoj, na snazi je bilo 
+                    zamračivanje i nije se smjelo koristiti velike brodove, koče ili plivarice za izlov ribe. Kako je vojska jedino dozvoljavala korištenje 
+                    manjih brodica, tako su ljudi, ribari, odlazili u lov na Gavune. Lovilo se na Puntu i na Pomašnjaku. Dolazilo je po desetak-dvanaestak 
+                    brodova i svaki je brod lovio po 50-100 kilograma Gavuna. Kako hrane nije bilo za vrijeme rata, tako su Kaprijanski Gavuni prehranili 
+                    pola Šibenika, te smo odlučili dati ime klubu Gaun kako i mi Kaprijani zovemo tu malenu ribicu.',
     'Email' => 'Email',
     'Gallery' => 'Galerija',
+    'Header' => 'Naslov',
     'History' => 'Povijest',
     'Home' => 'Početna',
+    'How it came about' => 'Kako je nastao Gaun',
+    'If you forgot your password you can' => 'Ako ste zaboravili lozinku, možete',
+    'In circle of 10 Nm are:' => 'U krugu od 10 Nm nalazi se',
+    'In circle of 15 Nm are:' => 'U krugu od 15 Nm nalazi se',
+    'In circle of 5 Nm are:' => 'U krugu od 5 Nm nalazi se',
+    'Island' => 'Otok',
     'It is worth mentioning that the Club of Sport Fishing on Sea Gaun greatly assists with the development of the island 
                     and the life of the islanders. For example, Gaun sponsored the local board of the Island Kaprije and with mutual funds 
                     helped to build promenade, new avenue. Donation will also be given to rebuild an old olive oil mill. SKRM Gaun from its 
                     own funding has repaired a smaller pier where today moorings are charged. SKRM Gaun sponsors children’s sports games where 
-                    children compete in a sack race, play football on the playground, run with an egg in a spoon.' => 
-                    'Vrijedno je spomenuti da Sportski Klub za Ribolov na Moru Gaun uvelike potpomaže razvoju otoka i životu otočana, pa tako Gaun 
+                    children compete in a sack race, play football on the playground, run with an egg in a spoon.' => 'Vrijedno je spomenuti da Sportski Klub za Ribolov na Moru Gaun uvelike potpomaže razvoju otoka i životu otočana, pa tako Gaun 
                     sponzorira mjesni odbor Kaprije te se zajedničkim sredstvima izgradila šetnica, novi drvored, dala se i donacija za uređenje uljare.
                      ŠKRM Gaun je sam iz svojih financijskih sredstava sanirao malu rivu na kojoj i danas naplaćuje privez. SKRM Gaun sponzorira Dječje 
                      Sportske Igre gdje se djeca takmiče u trčanju u vrećama, igra se mali nogomet na igralištu, trči se i sa jajetom u žlici.',
     'Login' => 'Prijava',
     'Logout (i' => 'Odjava',
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repr
+                    ehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.' => 'Lorem ipsum tekst',
     'Members' => 'Članovi',
     'Name' => 'Ime',
     'New password saved.' => 'Nova lozinka spremljena',
     'News' => 'Vijesti',
+    'Photos' => 'Fotografije',
+    'Please choose your new password:' => 'Izaberite novu lozinku',
+    'Please contact us if you think this is a server error. Thank you.' => 'Kontaktirajet nas ako mislite da je ovo greška servera. Hvala.',
+    'Please fill out the following fields to login' => 'Popunite slijedeća polja za prijavu.',
+    'Please fill out the following fields to signup:' => 'Popunite slijedeća polja za registraciju',
+    'Please fill out your email. A link to reset password will be sent there.' => 'Molimo upišite email da primite link za resetiranje lozinke',
+    'Read more' => 'Pročitaj više',
+    'Save' => 'Spremi',
+    'See more' => 'Vidi više',
+    'Send' => 'Pošalji',
     'Services' => 'Usluge',
     'Servis Information' => 'Servisne informacije',
     'Signup' => 'Registracija',
     'Sorry, we are unable to reset password for the provided email address.' => 'Lozinku nije moguće resetirati. Pogrešan Email',
     'Subject' => 'Subjekt',
+    'Submit' => 'Potvrdi',
     'Thank you for contacting us. We will respond to you as soon as possible.' => 'Hvala što ste nas kontakitrali. Javit ćemo se u najkraćem mogućem roku.',
+    'The Club of Sport Fishing on Sea Gaun employs three people. They are: club secretary Zlatko Jelovčić and two port 
+                officers for mooring' => 'Sportski Klub za Ribolov na Moru Gaun zapošljava tri otočana. To su Tajnik kluba Zlatko Jelovčić te dva privezivača',
+    'The above error occurred while the Web server was processing your request.' => 'Pogreška se dogodila dok je server procesirao vaš zahtijev.',
     'The requested page does not exist.' => 'Stranica ne postoji',
     'There was an error sending your message.' => 'Dogodila se pogreška prilikom slanja Vašeg email -a',
-    'This is the About page. You may modify the following file to customize its content:' => '',
     'Verification Code' => 'Verifikacijski kod',
+    'Videos' => 'Video',
+    'Were named the best and the nicest linesmen in the Middle Dalmatia. 
+                    The pier is never empty; they are always there to answer to all your questions and to help you in any situation.' => 'Proglašeni su najboljim i najljubaznijim privezivačima u srednjoj dalmaciji. 
+                    Riva nikad nije prazna, a oni su tu da odgovore na sva pitanja i da pomognu u svakoj situaciji.',
+    'What we can offer:' => 'Što nudimo:',
     'error' => 'pogreška',
+    'on photograph left to the right' => 'na fotografiji, s lijeva na desno',
+    'password' => 'lozinka',
+    'rememberMe' => 'zapamtiMe',
+    'reset it' => 'resetiraj',
     'success' => 'uspijeh',
+    'username' => 'korisničko ime',
 ];

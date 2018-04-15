@@ -6,9 +6,9 @@ use yii\helpers\Url;
 $this->title = 'Service Info';
 $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
 
+require_once(Yii::getAlias('@common') . '/' . 'helpers/language.php');
+languageSelector($language);
 ?>
-
-
 
 <div class="site-serviceInfo">
 
@@ -27,12 +27,12 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
 
     <div class="row">
         <div class="col-md-4">
-            <h3>In circle of 5 Nm are:</h3>
+            <h3><?= Yii::t('frontend', 'In circle of 5 Nm are:') ?></h3>
             <p>
                 <ul>
-                    <li>Island Žirje</li>
-                    <li>Island Zmajan</li>
-                    <li>Island Zlarin</li>
+                    <li><?= Yii::t('frontend', 'Island') ?> Žirje</li>
+                    <li><?= Yii::t('frontend', 'Island') ?> Zmajan</li>
+                    <li><?= Yii::t('frontend', 'Island') ?> Zlarin</li>
                     <li>Vodice</li>
                     <li>Tribunj</li>
                     <li>Jezera</li>
@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
             </p>
         </div>
         <div class="col-md-4">
-            <h3>In circle of 10 Nm are:</h3>
+            <h3><?= Yii::t('frontend', 'In circle of 10 Nm are:') ?></h3>
             <p>
                 <ul>
                     <li>National Park Kornati</li>
@@ -55,7 +55,7 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
             </p>
         </div>
         <div class="col-md-4">
-            <h3>In circle of 15 Nm are:</h3>
+            <h3><?= Yii::t('frontend', 'In circle of 15 Nm are:') ?></h3>
             <p>
                 <ul>
                     <li>Pakoštane</li>

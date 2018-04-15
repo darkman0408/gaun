@@ -9,6 +9,9 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'languageSwitcher' => [
+            'class' => 'common\components\languageSwitcher',
+        ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],

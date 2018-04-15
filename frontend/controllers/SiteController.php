@@ -6,6 +6,7 @@ use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\NotFoundHttpException;
 use yii\web\Controller;
+use yii\web\Cookie;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
@@ -79,7 +80,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->render('index', [
+            'language' => $this->selectLanguage(),
+        ]);
     }
 
     /**
@@ -101,6 +104,7 @@ class SiteController extends Controller
 
             return $this->render('login', [
                 'model' => $model,
+                'language' => $this->selectLanguage(),
             ]);
         }
     }
@@ -136,6 +140,7 @@ class SiteController extends Controller
         } else {
             return $this->render('contact', [
                 'model' => $model,
+                'language' => $this->selectLanguage(),
             ]);
         }
     }
@@ -147,17 +152,25 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        return $this->render('about', [
+            'language' => $this->selectLanguage(),
+        ]);
     }
 
     public function actionHistory()
     {
-        return $this->render('history');
+        return $this->render('history', [
+            'language' => $this->selectLanguage(),
+        ]);
     }
 
     public function actionActivities()
     {
-        return $this->render('activities');
+        $language = $this->selectLanguage();
+
+        return $this->render('activities', [
+            'language' => $language,
+        ]);
     }
 
     public function actionMembers()
@@ -166,6 +179,7 @@ class SiteController extends Controller
 
         return $this->render('members', [
             'model' => $model,
+            'language' => $this->selectLanguage(),
         ]);
     }
 
@@ -175,6 +189,7 @@ class SiteController extends Controller
 
         return $this->render('services', [
             'model' => $model,
+            'language' => $this->selectLanguage(),
         ]);
     }
 
@@ -184,6 +199,7 @@ class SiteController extends Controller
 
         return $this->render('news', [
             'model' => $model,
+            'language' => $this->selectLanguage(),
         ]);
     }
 
@@ -198,6 +214,7 @@ class SiteController extends Controller
 
         return $this->render('more-news', [
             'model' => $model,
+            'language' => $this->selectLanguage(),
         ]);
     }
 
@@ -210,12 +227,28 @@ class SiteController extends Controller
         return $this->render('gallery', [
             'model' => $model,
             'video' => $video,
+            'language' => $this->selectLanguage(),
         ]);
+    }
+
+    public function actionLanguage()
+    {
+        $language = Yii::$app->request->post('data');
+        Yii::$app->language = $language;
+
+        $languageCookie = new Cookie([
+            'name' => 'language',
+            'value' => $language,
+            'expire' => time() + 60 * 60 * 24 * 30, // 30 days
+        ]);
+        Yii::$app->response->cookies->add($languageCookie);
     }
 
     public function actionServiceInfo()
     {
-        return $this->render('service-info');
+        return $this->render('service-info', [
+            'language' => $this->selectLanguage(),
+        ]);
     }
 
     /**
@@ -236,6 +269,7 @@ class SiteController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
+            'language' => $this->selectLanguage(),
         ]);
     }
 
@@ -259,6 +293,7 @@ class SiteController extends Controller
 
         return $this->render('requestPasswordResetToken', [
             'model' => $model,
+            'language' => $this->selectLanguage(),
         ]);
     }
 
@@ -285,6 +320,14 @@ class SiteController extends Controller
 
         return $this->render('resetPassword', [
             'model' => $model,
+            'language' => $this->selectLanguage(),
         ]);
+    }
+    private function selectLanguage()
+    {
+        $cookies = Yii::$app->request->cookies;
+        $language = $cookies->getValue('language', 'en-US');
+         
+        return $language;
     }
 }

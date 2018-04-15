@@ -27,7 +27,12 @@
         "evgeniyrru/yii2-slick": "*",
         "vova07/yii2-imperavi-widget": "*",
         "kartik-v/yii2-tabs-x": "*",
-        "powerkernel/yii2-photoswipe": "*"
+        "powerkernel/yii2-photoswipe": "*",
+        "lajax/yii2-language-picker": "1.*",
+        "codemix/yii2-localeurls": "^1.7",
+        "pceuropa/yii2-language-selection-widget": "^1.0",
+        "hiqdev/yii2-language": "^0.1.0",
+        "dmstr/yii2-adminlte-asset": "^2.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

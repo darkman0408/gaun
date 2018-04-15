@@ -67,12 +67,19 @@ AppAsset::register($this);
             )
             . Html::endForm()
             . '</li>';
-    }
+    } ?>
+    <div class="navbar-text pull-right">
+        <?= Html::beginForm() ?>
+        <?= Html::dropDownList('language', Yii::$app->language, ['en-US' => 'English', 'hr-HR' => 'Croatian'], $options = ['id' => 'lang']) ?>
+        <?= Html::endForm() ?>
+    </div>
+    <?php
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
         'encodeLabels' => false,
     ]);
+
     NavBar::end();
     ?>
 
@@ -82,6 +89,7 @@ AppAsset::register($this);
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
+
     </div>
 </div>
 
@@ -99,7 +107,7 @@ AppAsset::register($this);
                 </ul>
             </div>
             <div class="col-md-3">
-                <p>About</p>
+                <p><?= Yii::t('frontend', 'About') ?></p>
                 <ul>
                     <li><?= Html::a(Yii::t('frontend', 'History'), ['/site/history']) ?></li>
                     <li><?= Html::a(Yii::t('frontend', 'Activities'), ['/site/activities']) ?></li>
@@ -108,7 +116,7 @@ AppAsset::register($this);
                 </ul>
             </div>
             <div class="col-md-3">
-                <p>Contact</p>
+                <p><?= Yii::t('frontend', 'Contact') ?></p>
                 <ul>
                     <li>Ivo Radovčić</li>
                     <li>+385(0)98 943 5293</li>
@@ -133,3 +141,27 @@ AppAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
+
+<script type="text/javascript">
+    
+    var data; 
+
+    $("#lang").change(function() {
+        var selectedValue = $(this).val();       
+        data = selectedValue;
+
+        //console.log(data);
+
+        $.ajax({
+            url: '/site/language',
+            async: false,
+            type: 'POST',
+            data: {data : data},
+            //dataType: 'json',
+            success: function() {
+                window.location.reload();
+            }
+        });
+    });
+
+</script>

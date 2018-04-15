@@ -4,13 +4,16 @@ use yii\helpers\Html;
 
 $this->title = 'Activities';
 $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
+
+require_once(Yii::getAlias('@common') . '/' . 'helpers/language.php');
+languageSelector($language);
 ?>
 
 <div class="site-about">
     <div class="row">
         <div class="col-sm-6">
             <div class="text">
-                <h3>Activities</hr>
+                <h3><?= Yii::t('frontend', 'Activities') ?></hr>
                 <hr>
                 <p>
                 <?= Yii::t('frontend', 
@@ -37,7 +40,7 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
         </div>
         <div class="col-sm-6">
             <div class="text">
-                <h3>Header...</hr>
+                <h3><?= Yii::t('frontend', 'Header') ?></hr>
                 <hr>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do

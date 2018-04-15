@@ -9,15 +9,14 @@ use yii\widgets\ListView;
 
 $this->title = 'Documents';
 $this->params['breadcrumbs'][] = $this->title;
+
+//require_once(Yii::getAlias('@common') . '/' . 'helpers/language.php');
+//languageSelector($language);
 ?>
 <div class="document-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Yii::t('frontend', 'Documents') ?></h1>
     <?php //echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Document', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
 
     <?= ListView::widget([
         'dataProvider' => $dataProvider,

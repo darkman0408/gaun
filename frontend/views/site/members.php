@@ -6,13 +6,16 @@ $this->title = 'Members';
 $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
 
 \madand\knockoutjs\KnockoutAsset::register($this);
+
+require_once(Yii::getAlias('@common') . '/' . 'helpers/language.php');
+languageSelector($language);
 ?>
 <div class="site-about">
     <div class="panel panel-default">
         <div class="panel-body">
             <h3>
-                The Club of Sport Fishing on Sea Gaun employs three people. They are: club secretary Zlatko Jelovčić and two port 
-                officers for mooring: Alen Radovčić and Čedo Jelovčić
+                <?= Yii::t('frontend', 'The Club of Sport Fishing on Sea Gaun employs three people. They are: club secretary Zlatko Jelovčić and two port 
+                officers for mooring') ?>: Alen Radovčić and Čedo Jelovčić
             </h3>
         </div>
     </div>
@@ -28,8 +31,8 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
                 <h3>Alen Radovčić and Čedo Jelovčić</hr>
                 <hr>
                 <p>
-                    Were named the best and the nicest linesmen in the Middle Dalmatia. 
-                    The pier is never empty; they are always there to answer to all your questions and to help you in any situation.
+                    <?= Yii::t('frontend', 'Were named the best and the nicest linesmen in the Middle Dalmatia. 
+                    The pier is never empty; they are always there to answer to all your questions and to help you in any situation.') ?>
                 </p>
             </div>
         </div>
@@ -37,10 +40,10 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
     <div class="row">
         <div class="col-sm-6">
             <div class="text">
-                <h3>Always smiling with clubs president Ivo Radovčić</hr>
+                <h3><?= Yii::t('frontend', 'Always smiling with clubs president') ?> Ivo Radovčić</hr>
                 <hr>
                 <p>
-                    on photograph left to the right: Čedo Jelovčić, Ivo Radovčić, Alen Radovčić
+                    <?= Yii::t('frontend', 'on photograph left to the right') ?>: Čedo Jelovčić, Ivo Radovčić, Alen Radovčić
                 </p>
             </div>
         </div>
@@ -52,7 +55,7 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
     </div>
 </div>
 
-<p class="members"><strong>Club is counting few dozen active members.</strong></p>
+<p class="members"><strong><?= Yii::t('frontend', 'Club is counting few dozen active members.') ?></strong></p>
 <hr>
 <div class="row" data-bind="foreach: data">
     <div class="col-md-3">

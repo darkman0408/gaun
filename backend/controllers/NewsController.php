@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use yii\filters\AccessControl;
 
 /**
  * NewsController implements the CRUD actions for News model.
@@ -21,6 +22,16 @@ class NewsController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'view', 'create', 'delete'],
+                        'allow' => true,
+                        'roles' => ['admin'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -93,13 +104,19 @@ class NewsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
+        if($model->load(Yii::$app->request->post()))
+        {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            
+            if($model->imageFile)
+                $model->upload();
 
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+            $model->save();
+
+            return $this->redirect(['create']);
+        } 
+        else      
+            return $this->render('create', ['model' => $model,]);
     }
 
     /**

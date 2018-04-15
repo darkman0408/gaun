@@ -8,6 +8,9 @@ $this->title = 'Gallery';
 $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
 
 GalleryAsset::register($this);
+
+require_once(Yii::getAlias('@common') . '/' . 'helpers/language.php');
+languageSelector($language);
 ?>
 
 
@@ -18,8 +21,8 @@ GalleryAsset::register($this);
 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#photos" aria-control="photos" role="tab" data-toggle="tab">Photos</a></li>
-            <li role="presentation"><a href="#videos" aria-control="videos" role="tab" data-toggle="tab">Videos</a></li>
+            <li role="presentation" class="active"><a href="#photos" aria-control="photos" role="tab" data-toggle="tab"><?= Yii::t('frontend', 'Photos') ?></a></li>
+            <li role="presentation"><a href="#videos" aria-control="videos" role="tab" data-toggle="tab"><?= Yii::t('frontend', 'Videos') ?></a></li>
         </ul>
 
         <!-- Tab panes -->

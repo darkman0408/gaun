@@ -10,9 +10,13 @@ use yii\captcha\Captcha;
 
 $this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
+
+require_once(Yii::getAlias('@common') . '/' . 'helpers/language.php');
+languageSelector($language);
 ?>
+
 <div class="site-contact">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Yii::t('frontend', Html::encode($this->title)) ?></h1>
 
     <div class="row">
         <div class="col-lg-4">
@@ -31,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]) ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                    <?= Html::submitButton(Yii::t('frontend', 'Submit'), ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
                 </div>
 
             <?php ActiveForm::end(); ?>
@@ -43,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="col-md-4">
             <div class="contact-stuff">
-				<p>Mooring:</p>
+				<p><?= Yii::t('frontend', 'Mooring:') ?></p>
 				<ul>
 					<li>Alen Radovčić</li>
 					<li>+385(0)98 526 250</li>
@@ -51,13 +55,13 @@ $this->params['breadcrumbs'][] = $this->title;
 					<li>+385(0)99 596 0717</li>
 				</ul>
 
-				<p>President</p>
+				<p><?= Yii::t('frontend', 'President') ?></p>
 				<ul>
 					<li>Ivo Radovčić</li>
 					<li>+385(0)98 943 5293</li>
 				</ul>
 
-				<p>Secretary</p>
+				<p><?= Yii::t('frontend', 'Secretary') ?></p>
 				<ul>
 					<li>Zlatko Jelovčić</li>
 					<li>+385(0)99 379 0858</li>

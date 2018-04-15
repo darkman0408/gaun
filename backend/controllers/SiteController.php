@@ -28,7 +28,7 @@ class SiteController extends Controller
                     [
                         'actions' => ['logout', 'index'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['admin'],
                     ],
                 ],
             ],
@@ -60,7 +60,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->redirect('user/index');
     }
 
     /**
@@ -75,8 +75,22 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+        if ($model->load(Yii::$app->request->post()) && $model->login()) 
+        {
+            if(Yii::$app->user->can('admin'))
+            {
+                return $this->goBack();
+            }
+            else
+            {
+                Yii::$app->user->logout(false);
+                Yii::$app->session->setFlash('error', 'You are not allowed to access backend!');
+
+                return $this->render('login', [
+                    'model' => $model,
+                ]);
+            }
+            
         } else {
             $model->password = '';
 
@@ -96,5 +110,18 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionLanguage()
+    {
+        $language = Yii::$app->request->post('data');
+        Yii::$app->language = $language;
+
+        $languageCookie = new Cookie([
+            'name' => 'language',
+            'value' => $language,
+            'expire' => time() + 60 * 60 * 24 * 30, // 30 days
+        ]);
+        Yii::$app->response->cookies->add($languageCookie);
     }
 }

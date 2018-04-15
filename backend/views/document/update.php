@@ -11,6 +11,7 @@ $this->title = Yii::t('app', 'Update Document: {nameAttribute}', [
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Documents'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+
 ?>
 <div class="document-update">
 

@@ -4,6 +4,11 @@ namespace common\models;
 
 use Yii;
 use yii\imagine\Image as Imagine;
+use yii\behaviors\BlameableBehavior;
+use yii\behaviors\SluggableBehavior;
+use yii\behaviors\TimestampBehavior;
+use yii\db\Expression;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "news".
@@ -30,6 +35,25 @@ class News extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'news';
+    }
+
+    public function behaviors()
+    {
+        return [
+            'timestamp' => [
+                'class' => TimestampBehavior::className(),
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['createdAt', 'updatedAt'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updatedAt'],
+                ],
+                'value' => new Expression('NOW()'),
+            ],
+            [
+                'class' => SluggableBehavior::className(),
+                'attribute' => 'title',
+                'slugAttribute' => 'slug',
+            ],
+        ];
     }
 
     /**
@@ -75,7 +99,11 @@ class News extends \yii\db\ActiveRecord
         {
             $filePath = 'uploads/news_images/image/' . $imageName .  '.' . $extension;
 
-            $this->imageFile->saveAs($filePath);
+            $frontFilePath = Yii::getAlias('@frontWeb') . '/uploads/news_images/image/' . $imageName . '.' . $extension;
+
+            $this->imageFile->saveAs($filePath, false);
+
+            $this->imageFile->saveAs($frontFilePath);
 
             $this->imageFile = null;
             $this->lead_photo = $filePath;

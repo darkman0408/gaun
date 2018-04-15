@@ -44,14 +44,41 @@ return [
                 ],
             ],
         ],
-        /*
         'urlManager' => [
+            'class' => 'yii\web\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => true,
             'rules' => [
+                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                'defaultRoute' => '/site/index',
+                '<action:(.*)>' => 'site/<action>',
             ],
         ],
-        */
+        'i18n' => [
+            'translations' => [
+                'frontend*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@frontend/messages',
+                    'sourceLanguage' => 'en_US',
+                    'forceTranslation' => true,
+                ],
+                /* 'backend*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                ], */
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@backend/messages',
+                    'sourceLanguage' => 'en-US',
+                    'forceTranslation' => true,
+                ],
+            ],
+        ],
     ],
+    'language' => 'hr-HR',
+    'sourceLanguage' => 'en-US',
     'params' => $params,
 ];

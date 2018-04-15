@@ -6,13 +6,16 @@ $this->title = 'Services';
 $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
 
 \madand\knockoutjs\KnockoutAsset::register($this);
+
+require_once(Yii::getAlias('@common') . '/' . 'helpers/language.php');
+languageSelector($language);
 ?>
 
 <div class="site-services">
 
     <div class="panel panel-default">
         <div class="panel-body">
-        <h4>What we can offer:</h4>
+        <h4><?= Yii::t('frontend', 'What we can offer:') ?></h4>
         </div>
     </div>
 
@@ -40,8 +43,8 @@ $this->params['breadcrumbs'][] = 'About' . ' / ' . $this->title;
             foreach($model as $val)
             {
                 $data = [
-                    'name' => $val->name,
-                    'description' => $val->description
+                    'name' => Yii::t('frontend', $val->name),
+                    'description' => Yii::t('frontend', $val->description)
                 ]; 
                 $data = json_encode($data);               
                 print $data;

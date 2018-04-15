@@ -13,6 +13,9 @@ use yii\web\JsExpression;
 use frontend\assets\SlideAsset;
 
 SlideAsset::register($this);
+
+require_once(Yii::getAlias('@common') . '/' . 'helpers/language.php');
+languageSelector($language);
 ?>
 
 
@@ -44,13 +47,13 @@ SlideAsset::register($this);
                         <div class="item active">
                         <div class="col-md-2 col-sm-6 col-xs-12">
                             <div>
-                                <h3>News 1</h3>
+                                <h3><?= Yii::t('frontend', 'News') ?> 1</h3>
                                 <hr>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
                                 </p>
                                 <p>
-                                    <a class="btn btn-default" href="#">See more...</a>
+                                    <a class="btn btn-default" href="#"><?= Yii::t('frontend', 'See more') ?>...</a>
                                 </p>
                             </div>
                         </div>
@@ -58,13 +61,13 @@ SlideAsset::register($this);
                     <div class="item">
                         <div class="col-md-2 col-sm-6 col-xs-12">
                             <div>
-                                <h3>News 2</h3>
+                                <h3><?= Yii::t('frontend', 'News') ?> 2</h3>
                                 <hr>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
                                 </p>
                                 <p>
-                                    <a class="btn btn-default" href="#">See more...</a>
+                                    <a class="btn btn-default" href="#"><?= Yii::t('frontend', 'See more') ?>...</a>
                                 </p>
                             </div>
                         </div>
@@ -72,13 +75,13 @@ SlideAsset::register($this);
                     <div class="item">
                         <div class="col-md-2 col-sm-6 col-xs-12">
                             <div>
-                                <h3>News 3</h3>
+                                <h3><?= Yii::t('frontend', 'News') ?> 3</h3>
                                 <hr>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
                                 </p>
                                 <p>
-                                    <a class="btn btn-default" href="#">See more...</a>
+                                    <a class="btn btn-default" href="#"><?= Yii::t('frontend', 'See more') ?>...</a>
                                 </p>
                             </div>
                         </div>
@@ -86,13 +89,13 @@ SlideAsset::register($this);
                     <div class="item">
                         <div class="col-md-2 col-sm-6 col-xs-12">
                             <div>
-                                <h3>News 4</h3>
+                                <h3><?= Yii::t('frontend', 'News') ?> 4</h3>
                                 <hr>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
                                 </p>
                                 <p>
-                                    <a class="btn btn-default" href="#">See more...</a>
+                                    <a class="btn btn-default" href="#"><?= Yii::t('frontend', 'See more') ?>...</a>
                                 </p>
                             </div>
                         </div>
@@ -100,13 +103,13 @@ SlideAsset::register($this);
                     <div class="item">
                         <div class="col-md-2 col-sm-6 col-xs-12">
                             <div>
-                                <h3>News 5</h3>
+                                <h3><?= Yii::t('frontend', 'News') ?> 5</h3>
                                 <hr>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
                                 </p>
                                 <p>
-                                    <a class="btn btn-default" href="#">See more...</a>
+                                    <a class="btn btn-default" href="#"><?= Yii::t('frontend', 'See more') ?>...</a>
                                 </p>
                             </div>
                         </div>
@@ -114,13 +117,13 @@ SlideAsset::register($this);
                     <div class="item">
                         <div class="col-md-2 col-sm-6 col-xs-12">
                             <div>
-                                <h3>News 6</h3>
+                                <h3><?= Yii::t('frontend', 'News') ?> 6</h3>
                                 <hr>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
                                 </p>
                                 <p>
-                                    <a class="btn btn-default" href="#">See more...</a>
+                                    <a class="btn btn-default" href="#"><?= Yii::t('frontend', 'See more') ?>...</a>
                                 </p>
                             </div>
                         </div>
@@ -128,13 +131,13 @@ SlideAsset::register($this);
                     <div class="item">
                         <div class="col-md-2 col-sm-6 col-xs-12">
                             <div>
-                                <h3>News 7</h3>
+                                <h3><?= Yii::t('frontend', 'News') ?> 7</h3>
                                 <hr>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
                                 </p>
                                 <p>
-                                    <a class="btn btn-default" href="#">See more...</a>
+                                    <a class="btn btn-default" href="#"><?= Yii::t('frontend', 'See more') ?>...</a>
                                 </p>
                             </div>
                         </div>
@@ -142,13 +145,13 @@ SlideAsset::register($this);
                     <div class="item">
                         <div class="col-md-2 col-sm-6 col-xs-12">
                             <div>
-                                <h3>News 8</h3>
+                                <h3><?= Yii::t('frontend', 'News') ?> 8</h3>
                                 <hr>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...
                                 </p>
                                 <p>
-                                    <a class="btn btn-default" href="#">See more...</a>
+                                    <a class="btn btn-default" href="#"><?= Yii::t('frontend', 'See more') ?>...</a>
                                 </p>
                             </div>
                         </div>

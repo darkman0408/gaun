@@ -165,4 +165,34 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    /**
+    * Returns the User's current status label.
+    * @return string
+    */
+    public function getStatusLabel()
+    {
+        switch($this->status)
+        {
+            case User::STATUS_ACTIVE:
+                return 'Active';
+                break;
+            case User::STATUS_DELETED:
+                return 'Deleted';
+                break;
+            default:
+                return 'Undefined';
+        }
+    }
+
+    /**
+    * Returns the User's current role name.
+    * @return mixed
+    */
+    public function getRole() {
+
+        $userRoles = Yii::$app->authManager->getRolesByUser($this->id);
+
+        return array_shift($userRoles)->name;
+    }
 }

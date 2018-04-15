@@ -9,6 +9,7 @@ use yii\grid\GridView;
 
 $this->title = Yii::t('app', 'Documents');
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="document-index">
 

@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use common\models\User;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\UserSearch */
@@ -15,25 +17,45 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a(Yii::t('app', 'Create User'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'username',
-            'auth_key',
-            'password_hash',
-            'password_reset_token',
-            //'email:email',
-            //'status',
-            //'created_at',
-            //'updated_at',
+            'email:email',
+            [
+                'attribute' => 'status',
+                'format' => 'text',
+                'value' => function($model) {
+                    switch($model->status) {
+                        case User::STATUS_ACTIVE :
+                            return 'Active';
+                            break;
+                        case User::STATUS_DELETED :
+                            return 'Deleted';
+                            break;
+                        default:
+                            return 'Undefined';
+                    }
+                }
+            ],
+            [
+                'label' => 'User Role',
+                'attribute' => 'role',
+                'filter' => ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'name'),
+            ],
+            [
+                'attribute' => 'created_at',
+                'label' => 'Created at',
+                'format' => 'datetime',
+            ],
+            [
+                'attribute' => 'updated_at',
+                'label' => 'Updated at',
+                'format' => 'datetime',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

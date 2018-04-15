@@ -9,7 +9,13 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        [
+            'class' => 'common\components\LanguageSelector',
+            'supportedLanguages' => ['en_US', 'hr_HR'],
+        ],
+    ],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
@@ -53,7 +59,9 @@ return [
             'translations' => [
                 'frontend*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@common/messages',
+                    'basePath' => '@frontend/messages',
+                    'sourceLanguage' => 'en_US',
+                    'forceTranslation' => true,
                 ],
                 'backend*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
@@ -65,8 +73,21 @@ return [
                 ],
             ],
         ],
+         /* 'languagepicker' => [
+            'class' => 'lajax\languagepicker\Component',
+            'languages' => ['en-US', 'hr-HR'],
+            'cookieName' => 'language',
+            'expireDays' => 64,
+            'callback' => function() {
+                if(!\Yii::$app->user->isGuest) {
+                    $user = \Yii::$app->user->identity;
+                    $user->language = \Yii::$app->language;
+                    $user->save();
+                }
+            }
+        ],  */
     ],
-    'language' => 'hr-HR',
-    'sourceLanguage' => 'en-US',
+    'language' => 'hr_HR',
+    'sourceLanguage' => 'en_US',
     'params' => $params,
 ];
